@@ -12,8 +12,8 @@
   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   <!-- 靜態資料 -->
  <link rel="stylesheet" href="statics/css/base.css">
-  <link rel="stylesheet" href="statics/css/login.css">
-  <script src="statics/js/eye.js"></script>
+  <link rel="stylesheet" href="statics/css/content.css">
+  <script src="statics/js/echarts.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -23,7 +23,7 @@
 <style>
 .page-1 {
     height: 100vh;
-    background-image: url(statics/images/sand.jpg);
+    background: url(statics/images/sea.jpg);
     background-size: cover;
     position: relative;
   }
@@ -51,15 +51,15 @@
           <div class="menu">
               <ul class="wow animate__animated animate__bounceIn animate__delay-1s">
                 <li>
-                    <a href="/"  onclick="doCloseMenu()">
-                        <div class="en">Home</div>
-                        <div class="tw"><i class="fa fa-house-chimney fa-xl"></i>&nbsp; 回首頁</div>
+                    <a href="/update.html"  onclick="doCloseMenu()">
+                        <div class="en">Update Data</div>
+                        <div class="tw"><i class="fa-solid fa-id-card"></i>&nbsp; 更改資料</div>
                     </a>
                   </li>
                   <li>
-                    <a href="/signup.html" onclick="doCloseMenu()">
-                        <div class="en">signup</div>
-                        <div class="tw"><i class="fa fa-right-to-bracket fa-xl"></i>&nbsp; 註冊</div>
+                    <a href="#" onclick="doCloseMenu()">
+                        <div class="en">Logout</div>
+                        <div class="tw"><i class="fa fa-right-from-bracket fa-xl"></i>&nbsp; 登出</div>
                     </a>
                 </li>
               </ul>
@@ -77,45 +77,44 @@
 
 
      <!-- 內容 -->
-  <div class="page-1 text-center main" style="padding-top: 100px; height: 100vh;">
-    <main class="form-signup">
-      <form method=post action="" autocomplete="off">
-        <p><img src="statics/images/logo.png" alt="logo" width="50" height="50"></p>
-        <h1 class="h3 mb-3 fw-normal"><b>會員登入</b> </h1>
-        <!-- 帳號輸入框 -->
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <span class="input-group-text">
-              <i class="fa fa-user"></i>
-            </span>
-            <div class="form-floating" style=" width: 263px;">
-              <input type="text" name="account" class="form-control" placeholder="請輸入帳號" required>
-              <label for="floatingInput">請輸入帳號</label>
-            </div>
-          </div>
-        </div>
-        <!-- 密碼輸入框 -->
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <span class="input-group-text">
-              <i class="fa fa-lock"></i>
-            </span>
-            <div class="form-floating" style=" width: 221px;">
-              <input type="password" name="password" class="pwd form-control" placeholder="請輸入密碼" required>
-              <label for="floatingInput">請輸入密碼</label>
-            </div>
-            <span class="input-group-text ">
-              <a style="color: black;" onclick="show()">
-                <i class="fa fa-eye-slash icon"></i>
-              </a>
-            </span>
-          </div>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">登入</button>
+  <div class="page-1 text-center main" style="padding-top: 100px; height: 100vh;">  
+    <div class="container "> 
 
-      </form>
+  <form class="d-flex justify-content-center m-5"  method=post action="{{ url_for('search') }}" autocomplete="off">
+    <div class="form-group">
+      <div class="input-group ">
+        <div class="form-floating" >
+          <input type="text" name="searchaccount" class="form-control" placeholder="請輸入股票代號" required >
+          <label for="floatingInput">請輸入股票代號</label>
+        </div>
+        <span class="input-group-text" >
+          <button type=submit class="btn" >
+          <i class="fa fa-magnifying-glass fa-xl"></i>
+          </button>
+        </span>
+      </div>  
+  </form>    
+ </div>
+    
+        <!-- <form method=post  autocomplete="off">
+            <h1  class="h3 mb-3 fw-normal"><b>股票查詢</b> </h1>
+               
+           <div class="form-group">
 
-    </main>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="請輸入股票代號" required/>
+                <span class="input-icon">
+                    <i class="fa fa-arrow-trend-up "></i>
+                </span>
+            </div> 
+          </div>   
+            <button class="w-100 btn btn-lg btn-primary" type="submit">查詢</button>
+            
+          </form> -->
+           
+          <div id="stock" style ="width: 900px; height:400px;  margin:auto; padding: 20px; background-color: aliceblue; "></div>
+        </div>
+    <div class="mask"></div>
   </div>
      
 
@@ -135,6 +134,10 @@
 
     
 </body>
+<!-- 股票圖 -->
+<script src="statics/js/stock.js"></script>
+
+
 <script src="statics/js/wow.min.js"></script>
 <script>
     new WOW().init();

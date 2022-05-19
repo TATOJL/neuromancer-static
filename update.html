@@ -12,7 +12,7 @@
   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   <!-- 靜態資料 -->
  <link rel="stylesheet" href="statics/css/base.css">
-  <link rel="stylesheet" href="statics/css/login.css">
+  <link rel="stylesheet" href="statics/css/update.css">
   <script src="statics/js/eye.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,7 +23,7 @@
 <style>
 .page-1 {
     height: 100vh;
-    background-image: url(statics/images/sand.jpg);
+    background: url(statics/images/sea.jpg);
     background-size: cover;
     position: relative;
   }
@@ -51,15 +51,15 @@
           <div class="menu">
               <ul class="wow animate__animated animate__bounceIn animate__delay-1s">
                 <li>
-                    <a href="/"  onclick="doCloseMenu()">
-                        <div class="en">Home</div>
-                        <div class="tw"><i class="fa fa-house-chimney fa-xl"></i>&nbsp; 回首頁</div>
+                    <a href="/content.html"  onclick="doCloseMenu()">
+                        <div class="en">Stock</div>
+                        <div class="tw"><i class="fa fa-arrow-trend-up "></i>&nbsp; 股票查詢</div>
                     </a>
                   </li>
                   <li>
-                    <a href="/signup.html" onclick="doCloseMenu()">
-                        <div class="en">signup</div>
-                        <div class="tw"><i class="fa fa-right-to-bracket fa-xl"></i>&nbsp; 註冊</div>
+                    <a href="#" onclick="doCloseMenu()">
+                        <div class="en">Logout</div>
+                        <div class="tw"><i class="fa fa-right-from-bracket fa-xl"></i>&nbsp; 登出</div>
                     </a>
                 </li>
               </ul>
@@ -77,11 +77,12 @@
 
 
      <!-- 內容 -->
-  <div class="page-1 text-center main" style="padding-top: 100px; height: 100vh;">
-    <main class="form-signup">
-      <form method=post action="" autocomplete="off">
+  <div class="page-1 text-center main" style="padding-top: 100px; height: 100vh;">  
+      
+    <main class="form-signup bg-info">
+    <form method=post action="" autocomplete="off">
         <p><img src="statics/images/logo.png" alt="logo" width="50" height="50"></p>
-        <h1 class="h3 mb-3 fw-normal"><b>會員登入</b> </h1>
+        <h1 class="h3 mb-3 fw-normal"><b>更改會員資料</b> </h1>
         <!-- 帳號輸入框 -->
         <div class="form-group">
           <div class="input-group mb-3">
@@ -111,30 +112,62 @@
             </span>
           </div>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">登入</button>
+        <!-- 確認密碼輸入框 -->
+        <div class="form-group">
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i class="fa fa-lock"></i>
+              </span>
+              <div class="form-floating" style=" width: 221px;">
+                <input type="password" name="password2" class="pwd2 form-control" placeholder="請再次輸入密碼" required>
+                <label for="floatingInput">請再次輸入密碼</label>
+              </div>
+              <span class="input-group-text ">
+                <a style="color: black;" onclick="show2()">
+                  <i class="fa fa-eye-slash icon2"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+       
+        <!-- email輸入框 -->
+        <div class="form-group">
+          <div class="input-group mb-3 mt-3">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+            <div class="form-floating" style=" width: 261px;">
+              <input type="email" name="email" class="form-control" placeholder="請輸入email" required>
+              <label for="floatingInput">請輸入email</label>
+            </div>
+          </div>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">確認更改</button>
 
       </form>
-
     </main>
-  </div>
-     
-
-    <!-- 頁尾 -->
-<div class="footer">
-  <div class="container">
-      <h1>
-          <img src="statics/images/logo.png" style="width: 50px; height: 50px;"/>
-          <span style="font-size:30px;"><b>Neuromancer</b></span>
-      </h1>
-      <div>&copy; Neuromancer</div>
-  </div>
+    
 </div>
 
+  
+    <!-- 頁尾 -->
+<div class="footer">
+    <div class="container">
+        <h1>
+            <img src="statics/images/logo.png" style="width: 50px; height: 50px;"/>
+            <span style="font-size:30px;"><b>Neuromancer</b></span>
+        </h1>
+        <div>&copy; Neuromancer</div>
+    </div>
+  </div>
   
    
 
     
 </body>
+
+
+
 <script src="statics/js/wow.min.js"></script>
 <script>
     new WOW().init();
