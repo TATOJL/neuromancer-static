@@ -78,9 +78,9 @@
 
      <!-- 內容 -->
   <div class="page-1 text-center main" style="padding-top: 100px; height: 100vh;">  
-    <div class="container "> 
-
-  <form class="d-flex justify-content-center m-5"  method=post action="{{ url_for('search') }}" autocomplete="off">
+  <div class="container "> 
+  <h1 class="m-3"><b>股票資訊</b></h1>
+  <form class="d-flex justify-content-center m-3"  method=post action="{{ url_for('search') }}" autocomplete="off">
     <div class="form-group">
       <div class="input-group ">
         <div class="form-floating" >
@@ -95,24 +95,13 @@
       </div>  
   </form>    
  </div>
-    
-        <!-- <form method=post  autocomplete="off">
-            <h1  class="h3 mb-3 fw-normal"><b>股票查詢</b> </h1>
-               
-           <div class="form-group">
-
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="請輸入股票代號" required/>
-                <span class="input-icon">
-                    <i class="fa fa-arrow-trend-up "></i>
-                </span>
-            </div> 
-          </div>   
-            <button class="w-100 btn btn-lg btn-primary" type="submit">查詢</button>
-            
-          </form> -->
-           
+          
           <div id="stock" style ="width: 900px; height:400px;  margin:auto; padding: 20px; background-color: aliceblue; "></div>
+        
+          <div class="contniner bg-light m-3 p-3">預測結果:</div>
+
+
+
         </div>
     <div class="mask"></div>
   </div>
